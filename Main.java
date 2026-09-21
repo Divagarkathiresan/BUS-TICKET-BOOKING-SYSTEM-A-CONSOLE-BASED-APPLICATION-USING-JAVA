@@ -1,11 +1,12 @@
 import src.Interfaces.UserOperations;
 import src.Model.*;
 import src.Service.*;
+import src.Utils.IdGenerator;
+
 import java.util.*;
 
 public class Main{
     public static void main(String[] args){
-        
         Scanner sc=new Scanner(System.in);
         UserOperations userService=new UserService();
         AdminService adminService=new AdminService(userService);
@@ -16,7 +17,7 @@ public class Main{
         User CurrentUser=null;
         Account CurrentAccount=null;
         
-        Admin admin = new Admin(1, "Divagar", "Divagar@gmail.com", "1234", "Admin");
+        Admin admin = new Admin(IdGenerator.generateUserId(), "Divagar", "Divagar@gmail.com", "1234", "Admin");
         User adminUser=new User(admin.getUserId(),admin.getName(),admin.getEmail(),admin.getPassword());
 
         userService.addUser(adminUser);

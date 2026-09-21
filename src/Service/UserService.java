@@ -8,7 +8,7 @@ import src.Utils.IdGenerator;
 
 public class UserService implements UserOperations{
 
-    private ArrayList<User> users=new ArrayList<>();
+    protected ArrayList<User> users=new ArrayList<>();
 
     
     public void addUser(User user){

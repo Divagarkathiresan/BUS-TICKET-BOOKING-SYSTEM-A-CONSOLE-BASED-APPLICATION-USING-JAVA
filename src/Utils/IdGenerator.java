@@ -1,8 +1,14 @@
 package src.Utils;
+import java.util.ArrayList;
 
-public class IdGenerator {
+import src.Model.User;
+import src.Service.UserService;
+public class IdGenerator extends UserService{
     
-    private static int userId=2;
+    private static UserService us=new UserService();
+    private static ArrayList<User> users=us.getAllUsers();
+    
+    private static int userId=users.size()+1;
     private static int bookingId=1;
     private static int paymentId=1;
     private static int busId=1;
